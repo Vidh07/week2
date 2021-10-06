@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simulation - ball movement</title>
+</head>
+
+<body>
+  <p>Refresh this page to see your code changes in action</p>
+  <!-- YOUR CODE STARTS HERE -->
+  <div 
+      id="ball"
+      style="z-index:5;
+      position:absolute;
+      top:200px;
+      left:0px;
+      top:200px;
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      background:black;">
+      </div>
+      <script>
+        var ball=document. getElementById("ball");
+        var positionX=0;
+        var positionY=0;
+        var velocity=50;
+var reverse=true;
+function moveBall(){
+var Xmin=0;
+var Xmax=500;
+if(reverse==true){
+  positionX= positionX + velocity;
+          ball.style.left = positionX +'px';
+          positionY=positionY+ velocity;
+          ball.style.top = positionY +'px'
+          if (positionX >=Xmax)
+          {
+            reverse=false;
+        }
+      }
+
+else{
+  positionX = positionX-velocity;
+  ball.style.left = positionX+'px';
+positionY = positionY-velocity;
+ball.style.top = positionY +'px';        
+if(positionX==Xmin){
+  reverse=true;
+}
+}
+}
+    setInterval(moveBall,100);
+    </script>
+    
+
+
+  <!-- YOUR CODE ENDS HERE -->
+</body>
+<!-- DO NOT EDIT PAST THIS POINT -->
+<script src="./ball.js"></script>
+
+</html>
